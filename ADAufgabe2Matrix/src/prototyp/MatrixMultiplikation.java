@@ -87,11 +87,12 @@ public class MatrixMultiplikation {
 	}
 	
 	private static double[][] posPow(double[][] m, int exponent) {
-		double[][] accu = new double[m.length][m[0].length];
-		
-		accu = add(accu,m); //initialisierung von accu
-		if(exponent == 1) return accu; 
-		else return mult(accu,posPow(m,exponent-1)); //TODO: endrekursiv machen und letztendlich zu while transformieren
+		return posPow(m,m,exponent);
+	}
+	
+	private static double[][] posPow(double[][] accu, double[][] m, int exponent) {
+		if (exponent == 1) return accu;
+		else return posPow(mult(m,accu),m,exponent-1);
 	}
 	
 	public static double[][] identityMatrix(double[][] m) {
