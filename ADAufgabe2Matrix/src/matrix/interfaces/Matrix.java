@@ -1,3 +1,4 @@
+/** Lizensiert unter WTFPL /Licensed under the WTFPL.  http://www.wtfpl.net/*/
 package matrix.interfaces;
 
 public interface Matrix {
