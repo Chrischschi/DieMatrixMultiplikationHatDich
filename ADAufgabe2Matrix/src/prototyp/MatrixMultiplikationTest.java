@@ -25,6 +25,13 @@ public class MatrixMultiplikationTest {
 		double[][] expected = {{37, 54}, {81, 118}};
 		assertArrayEquals("{{1,2},{3,4}}^3 = {{37, 54}, {81, 118}}",expected,power(m1,3));
 	}
+	
+	@Test
+	public void testPower2Pos() {
+		double[][] oneXone = {{3}};
+		double[][] expected = {{9}};
+		assertArrayEquals("{{3}}^2 = {{9}}",expected,power(oneXone,2));
+	}
 
 	@Test
 	public void testIdentityMatrix2() {

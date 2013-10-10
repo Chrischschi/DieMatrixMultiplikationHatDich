@@ -87,11 +87,21 @@ public class MatrixMultiplikation {
 	}
 	
 	private static double[][] posPow(double[][] m, int exponent) {
-		return posPow(m,m,exponent);
+		double[][] accu = new double[m.length][m[0].length];
+		accu = add(m,accu);
+		int i = exponent;
+		while(i > 1)  {
+			accu = mult(accu,m);
+			i = i - 1;
+		}
+		
+		return accu;
+		
+		//return posPow(m,m,exponent);
 	}
 	
 	private static double[][] posPow(double[][] accu, double[][] m, int exponent) {
-		if (exponent == 1) return accu;
+		if (exponent <= 1) return accu;
 		else return posPow(mult(m,accu),m,exponent-1);
 	}
 	
@@ -117,6 +127,7 @@ public class MatrixMultiplikation {
 		//prüfen auf dem ersten und letzten index, ob die innere länge(spaltenlänge) der äußeren länge (zeilenlänge) entspricht
 		return m.length == m[0].length && m.length == m[m.length-1].length; 
 	}
+	
 	
 	
 	
