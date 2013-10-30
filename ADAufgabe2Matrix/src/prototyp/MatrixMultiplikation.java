@@ -28,7 +28,6 @@ public class MatrixMultiplikation {
 		
 		
 		
-		
 	}
 	
 	public static double[][] mult(double[][] a,double[][] b) {
