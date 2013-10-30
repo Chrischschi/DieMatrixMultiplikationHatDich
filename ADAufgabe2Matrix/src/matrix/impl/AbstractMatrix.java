@@ -7,7 +7,7 @@ abstract class AbstractMatrix implements Matrix {
 	
 	protected final int n; //dimensionierung der nXn-matrix
 	
-	AbstractMatrix(int n) {
+	protected AbstractMatrix(int n) {
 		this.n = n;
 	}
 	
@@ -18,7 +18,7 @@ abstract class AbstractMatrix implements Matrix {
 	public Matrix idMatrix() {
 		Matrix id = this.nullMatrix(); //initialisieren der matrix mit nullen
 		for(int i = 0; i < this.dim(); i++) {
-			for(int j = 0; j < this.dim(); i++) {
+			for(int j = 0; j < this.dim(); j++) {
 				if (i == j) id.set(i, j, 1); //diagonale erwischt => eins schreiben
 				else id.set(i, j, 0); // sonst 0 schreiben.
 			}
